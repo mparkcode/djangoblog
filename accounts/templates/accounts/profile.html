@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
+
+<h3>Profile</h3>
+
+<p>You are logged in as: </p>
+<p>{{user.username}}</p>
+<p>{{user.email}}</p>
+
+
+{% endblock content%}

@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% load bootstrap_tags %}
+{% block content%}
+<h1>Login</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form | as_bootstrap}}
+    
+    
+    <input type="submit" value="Login"/>
+    
+</form>
+<br>
+Forgot your password? <a href="#">Click here</a>
+{% endblock content %}
