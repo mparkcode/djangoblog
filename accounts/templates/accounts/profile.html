@@ -8,5 +8,12 @@
 <p>{{user.username}}</p>
 <p>{{user.email}}</p>
 
+<h3>Liked Posts</h3>
+
+   {% for post in user.liked_posts.all %}
+    
+        <p><a href="{% url 'post_detail' post.id %}">{{post.title}}</a></p>
+    
+    {% endfor %}
 
 {% endblock content%}

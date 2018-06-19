@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-2 col-sm-3 text-center">
             <a class="story-img" href="#">
-                <img src="{% static 'images/profile.jpg' %}" class="img-circle">
+                <img src="{{MEDIA_URL}}avatars/{{post.author.username}}.jpg" class="img-circle">
             </a>
             <p><span class="boldtext">Author:</span> {{post.author}}</p>
         </div>
@@ -19,6 +19,7 @@
                     <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
                     <p><span class="boldtext">Views:</span> {{post.views}}</p>
                     <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                    <p><span class="boldtext">Likes:</span> {{post.likes.all | length}}</p>
                     <a href="{% url 'get_posts' %}" class="btn btn-default">Back to Blog</a>
                     {% if post.author == request.user or user.is_superuser%}
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-default">Edit Post</a>
